@@ -7,6 +7,7 @@ $con = connection();
 $sql = "SELECT * FROM student_list ORDER BY LastName";
 $student = $con->query($sql) or die ($con->error);
 $row = $student->fetch_assoc();
+$total = $student->num_rows;
 
 if(!isset($_SESSION)){
     session_start();
@@ -74,7 +75,7 @@ if(!isset($_SESSION)){
                 <th>Date</th>
             </tr>
         </thead>
-        <?php do{?>
+    <?php if($total > 0) { do{?>
             <tr id="student-list">
                 <?php if(isset($_SESSION['access']) && $_SESSION['access'] === 'admin'){ ?>
                 <td ><a class="details"href ="details.php?ID=<?php echo $row['Id'];?>"> View</a></td> <?php } ?> 
@@ -86,6 +87,19 @@ if(!isset($_SESSION)){
                 <td ><?php echo $row["Date"]; ?></td>
             </tr>
             <?php }while($row = $student->fetch_assoc()) ?>
+
+    <?php }else{ ?>
+            <tr id="student-list">
+                <?php if(isset($_SESSION['access']) && $_SESSION['access'] === 'admin'){ ?>
+                <td >No Data</td> <?php }?>
+                <td >No Data</td>
+                <td >No Data</td>
+                <td >No Data</td>
+                <td >No Data</td>
+                <td >No Data</td>
+                <td >No Data</td>
+            </tr> 
+    <?php } ?> 
         <tbody>
 
         </tbody>
