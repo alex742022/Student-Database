@@ -68,7 +68,7 @@ if(isset($_SESSION['access']) && $_SESSION['access'] == "admin"){
                     <h1 id='alert'>WARNING</h1>
                     <p>Do you want to delete?</p>
 
-                    <form id="formAction"action="delete.php" method="post">
+                    <form id="formAction" action="delete.php" method="post">
                         <input type="hidden" name="ID" value="<?php echo $row['Id'];?>">
                         <button class ="yesdelete sbd" type="submit" name="delete">Yes</button>
                         <a class ="notdelete" href="details.php?ID=<?php echo $row['Id'];?>">No</a>
@@ -98,6 +98,7 @@ if(isset($_SESSION['access']) && $_SESSION['access'] == "admin"){
             visibility: visible;
             transition: transform 0.4s, top 0.4s;
             background-color: lightgray;
+            visibility: hidden;
         }
         .picture{
             postion: relative;
@@ -121,6 +122,24 @@ if(isset($_SESSION['access']) && $_SESSION['access'] == "admin"){
         }
 
     </style>
+    <script>
+        const deleteButton = document.querySelector('.delete'); 
+        const popupWarning = document.querySelector('.container1');
+        const notDelete = document.querySelector('.notdelete');
+
+        deleteButton.addEventListener('click', (warningPopup) =>{
+            popupWarning.style.visibility = 'visible';
+        });
+        notDelete.addEventListener('click', (dontDelete) =>{
+            popupWarning.style.visibility = 'hidden';
+        });
+
+    </script>
+
+
+
+
+
     <?php
 } else{
         echo header('Location: index.php');
