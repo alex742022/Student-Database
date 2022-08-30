@@ -25,9 +25,21 @@ if(isset($_SESSION['access']) && $_SESSION['access'] === 'admin'){
         
         $con->query($sql) or die ($con->error);
         
-        echo "
-        
-        <h1>Student Added</h1>";  
+        $added_message = "
+                            <h3 class='added'>Student Added!</h3>
+                            
+                            <style>
+                                h3{
+                                    text-align: center;
+                                    color: green;
+                                }
+                            </style>
+
+                            <script>
+
+                                setTimeout(() => document.querySelector('.added').remove(), 2000);
+
+                            </script>";  
     }
 
     ?>
@@ -44,6 +56,7 @@ if(isset($_SESSION['access']) && $_SESSION['access'] === 'admin'){
         <h1 class="sform">Student Form</h1>
         <form action="" method="post">
             <div class="flex">
+            <span><?php echo $added_message ?></span>
             <label>First Name</label>
             <input class="firstName" type="text" name="firstname" id="firstName" required>
             <label>Last Name</label>
