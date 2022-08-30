@@ -25,7 +25,9 @@ if(isset($_SESSION['access']) && $_SESSION['access'] === 'admin'){
         
         $con->query($sql) or die ($con->error);
         
-        echo "<h1>Student Added</h1>";  
+        echo "
+        
+        <h1>Student Added</h1>";  
     }
 
     ?>
@@ -53,11 +55,10 @@ if(isset($_SESSION['access']) && $_SESSION['access'] === 'admin'){
             <label>Age</label>
             <input class="age" type="number" min="10" max="60" name="age" id="age" required> 
             <input class="submit" type ="submit" id="submit" value="Submit" name="submit">
-            <a class="bindex" href="index.php" onclick= "backAdd()">Back</a>
+            <a class="submit back" href="index.php">Back</a>
             </div>
         </form>
     </body>
-    <script src="back.js"></script>
     </html>
 <?php 
 }
