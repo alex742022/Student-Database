@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: arial, sans-serif;
 }
-.add, .logout, .login, .edits{
+.add, .logout, .login, .edits, .back, .delete,.yesdelete, .notdelete{
     font-size: 17px;
     text-decoration: none;
     display: flex;
@@ -16,6 +16,9 @@
     width: 200px;
     border-radius: 5px;
     border: none;
+}
+.delete,.yesdelete, .notdelete{
+    background-color: red;
 }
 .slist{
     text-align: center;
