@@ -38,7 +38,6 @@ if(isset($_SESSION['access']) && $_SESSION['access'] === 'admin'){
                             <script>
 
                                 setTimeout(() => document.querySelector('.added').remove(), 2000);
-
                             </script>";  
     }
 
@@ -56,7 +55,9 @@ if(isset($_SESSION['access']) && $_SESSION['access'] === 'admin'){
         <h1 class="sform">Student Form</h1>
         <form action="" method="post">
             <div class="flex">
+<?php   if(isset($_POST["submit"])){?>
             <span><?php echo $added_message ?></span>
+<?php       } ?>
             <label>First Name</label>
             <input class="firstName" type="text" name="firstname" id="firstName" required>
             <label>Last Name</label>
