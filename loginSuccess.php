@@ -20,9 +20,10 @@ if(isset($_SESSION['access']) && $_SESSION['access'] === 'admin'){
     <div class='container'>
     </div>
     <div class='container1'>
+    <div class='picture'><img src='image/check.webp'></div>
     <h1 id='alert'>WELCOME ADMIN</h1>
     <p>Logged in successfully.</p>
-    <a href='index.php' class='btn' onclick='containerClose()'>Ok</a>
+    <a href='index.php' id='btn' onclick='containerClose()'>Ok</a>
     </div>
 
     <style>
@@ -40,7 +41,7 @@ if(isset($_SESSION['access']) && $_SESSION['access'] === 'admin'){
         }
         .container1{
             width: 350px;
-            height: 400px;
+            height: 300px;
             background: white;
             text-align: center;
             position: fixed;
@@ -54,21 +55,35 @@ if(isset($_SESSION['access']) && $_SESSION['access'] === 'admin'){
         .open-container1{
             visibility: visible;
         }
+        .picture{
+            postion: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .picture img{
+            width: 100px;
+            position: absolute;
+            top: -25px;
+        }
         h1{
-            margin: 30px auto 10px;
+            margin: 90px auto 10px;
             font-size: 24px;
             color: green;
         }
-        .btn{
-            width: 200px;
-            padding: 10px;
+        .container1 p {
+            margin-bottom: 50px;
+        }
+        #btn{
+            padding: 10px 60px 10px 60px;
             background-color: green;
             color: white;
             border: none;
             border-radius: 6px;
             font-size: 15px;
-            margin-top: 50px;
             cursor: pointer;
+            text-decoration: none;
         }
     </style>
     
@@ -93,9 +108,10 @@ if(isset($_SESSION['access']) && $_SESSION['access'] === 'admin'){
     <div class='container'>
     </div>
     <div class='container1'>
+    <div class='picture'><img src='image/check.webp'></div>
     <h1 id='alert'>WELCOME STUDENT</h1>
     <p>Logged in successfully.</p>
-    <a href='index.php' class='btn' onclick='containerClose()'>Ok</a>
+    <a href='index.php' id='btn' onclick='containerClose()'>Ok</a>
     </div>
 
     <style>
@@ -113,7 +129,7 @@ if(isset($_SESSION['access']) && $_SESSION['access'] === 'admin'){
         }
         .container1{
             width: 350px;
-            height: 400px;
+            height: 300px;
             background: white;
             text-align: center;
             position: fixed;
@@ -127,21 +143,35 @@ if(isset($_SESSION['access']) && $_SESSION['access'] === 'admin'){
         .open-container1{
             visibility: visible;
         }
+        .picture{
+            postion: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .picture img{
+            width: 100px;
+            position: absolute;
+            top: -25px;
+        }
         h1{
-            margin: 30px auto 10px;
+            margin: 90px auto 10px;
             font-size: 24px;
             color: green;
         }
-        .btn{
-            width: 200px;
-            padding: 10px;
+        .container1 p {
+            margin-bottom: 50px;
+        }
+        #btn{
+            padding: 10px 60px 10px 60px;
             background-color: green;
             color: white;
             border: none;
             border-radius: 6px;
             font-size: 15px;
-            margin-top: 50px;
             cursor: pointer;
+            text-decoration: none;
         }
     </style>
     
